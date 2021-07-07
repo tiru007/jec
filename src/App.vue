@@ -35,7 +35,7 @@ import axios from "axios";
         methods: {
         getitems() {
           axios
-            .get("https://lively-wave-051b7f910.azurestaticapps.net/api/getcustomers")
+            .get("/api/getcustomers")
             .then(response => (this.items = response.data));
         }
       }
