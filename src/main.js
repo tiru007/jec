@@ -4,7 +4,6 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-Vue.use(axios)
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
