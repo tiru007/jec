@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import axios from 'axios'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(axios)
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
