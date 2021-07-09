@@ -9,7 +9,7 @@
       >
         <b-form-input
           id="input-1"
-          v-model="form.Email"
+          v-model="form.email"
           type="email"
           placeholder="Enter Email"
           required
@@ -19,7 +19,7 @@
       <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
         <b-form-input
           id="input-2"
-          v-model="form.Name"
+          v-model="form.name"
           placeholder="Enter Name"
           required
         ></b-form-input>

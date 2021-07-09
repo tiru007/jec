@@ -42,7 +42,7 @@ import axios from 'axios'
     },
     mounted () {
     axios
-      .get('https://lively-wave-051b7f910.azurestaticapps.net/api/getcustomers')
+      .get('/api/getcustomers')
       .then(response => (this.items = response.data, console.warn(response.data)))
   }
   
