@@ -7,8 +7,8 @@ namespace Service.Function
     {
         public string id { get; set; }
         public string mobilenumber { get; set; }
-        public string Name { get; set; }
-        public string Email {get; set;}
+        public string name { get; set; }
+        public string email {get; set;}
         public Service[] service{ get; set; }
         public Sale[] sale{ get; set; }
         public Address Address { get; set; }

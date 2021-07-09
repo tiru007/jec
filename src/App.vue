@@ -11,8 +11,9 @@
 
       <!-- A custom formatted column -->
       <template #cell(name)="data">
-        <b class="text-info">{{ data.item.value.firstName }}</b>, <b>{{ data.item.value.lastname }}</b>
+        <b class="text-info">{{ data.item.value.email }}</b>, <b class="text-info">{{ data.item.value.mobilenumber }}</b>, <b class="text-info">{{ data.item.value.name }}</b>
       </template>
+
     </b-table>
   </div>
 </template>
@@ -29,10 +30,10 @@ import axios from 'axios'
           // A virtual column that doesn't exist in items
           'index',
           // A column that needs custom formatting
-         'firstName',
-         'lastName',
+         'email',
           // A regular column
-          'mobilenumber'
+          'mobilenumber',
+          'ame'
         ],
         items: []
       }

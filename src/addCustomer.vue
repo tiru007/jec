@@ -9,9 +9,9 @@
       >
         <b-form-input
           id="input-1"
-          v-model="form.email"
+          v-model="form.Email"
           type="email"
-          placeholder="Enter email"
+          placeholder="Enter Email"
           required
         ></b-form-input>
       </b-form-group>
@@ -19,8 +19,8 @@
       <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
         <b-form-input
           id="input-2"
-          v-model="form.name"
-          placeholder="Enter name"
+          v-model="form.Name"
+          placeholder="Enter Name"
           required
         ></b-form-input>
       </b-form-group>
@@ -59,7 +59,7 @@
     methods: {
       onSubmit(event) {
         event.preventDefault(),
-        axios.post("https://lively-wave-051b7f910.azurestaticapps.net/api/postcustomer", this.form)
+        axios.post("/api/postcustomer", this.form)
         alert(JSON.stringify(this.form))
       },
       onReset(event) {
