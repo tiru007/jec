@@ -1,5 +1,8 @@
 <template>
    <div>
+     <div>
+       <add-customer />
+     </div>
     <b-table small :fields="fields" :items="items" responsive="sm">
       <!-- A virtual column -->
       <template #cell(index)="data">
@@ -15,9 +18,11 @@
 </template>
 
 <script>
+import addCustomer from './addCustomer.vue'
 import axios from 'axios'
   export default {
     name: "App",
+    components: {addCustomer},
     data() {      
             return {
         fields: [
