@@ -6,8 +6,8 @@ namespace Service.Function
     public class SaleDetails
         {
             public string customerid { get; set; }
-            public string Name { get; set; }
-            public string Email { get; set; }
+            public string name { get; set; }
+            public string email { get; set; }
             public string mobilenumber { get; set; }
             public string DeviceId { get; set; }
             public string SaleType { get; set; }
