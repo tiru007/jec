@@ -59,7 +59,7 @@
     methods: {
       onSubmit(event) {
         event.preventDefault(),
-        axios.post("http://lively-wave-051b7f910.azurestaticapps.net/api/postcustomer", this.form)
+        axios.post("https://lively-wave-051b7f910.azurestaticapps.net/api/postcustomer", this.form)
         alert(JSON.stringify(this.form))
       },
       onReset(event) {
