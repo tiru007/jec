@@ -3,6 +3,7 @@
      <div>
        <add-customer />
      </div>
+     <div>
     <b-table small :fields="fields" :items="items" responsive="sm">
       <!-- A virtual column -->
       <template #cell(index)="data">
@@ -10,11 +11,12 @@
       </template>
 
       <!-- A custom formatted column -->
-      <template #cell(name)="data">
+      <template #cell(fullname)="data">
         <b class="text-info">{{ data.item.value.email }}</b>, <b class="text-info">{{ data.item.value.mobilenumber }}</b>, <b class="text-info">{{ data.item.value.name }}</b>
       </template>
 
     </b-table>
+    </div>
   </div>
 </template>
 
@@ -29,11 +31,11 @@ import axios from 'axios'
         fields: [
           // A virtual column that doesn't exist in items
           'index',
+          'name',
           // A column that needs custom formatting
          'email',
           // A regular column
-          'mobilenumber',
-          'ame'
+          'mobilenumber'
         ],
         items: []
       }
