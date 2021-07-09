@@ -1,50 +1,19 @@
 <template>
-   <div>
+   <div>        
      <div>
        <add-customer />
+       <displaycustomers />
      </div>
-     <div>
-    <b-table small :fields="fields" :items="items" responsive="sm">
-      <!-- A virtual column -->
-      <template #cell(index)="data">
-        {{ data.index + 1 }}
-      </template>
-
-      <!-- A custom formatted column -->
-      <template #cell(fullname)="data">
-        <b class="text-info">{{ data.item.value.email }}</b>, <b class="text-info">{{ data.item.value.mobilenumber }}</b>, <b class="text-info">{{ data.item.value.name }}</b>
-      </template>
-
-    </b-table>
-    </div>
+     
   </div>
 </template>
 
 <script>
 import addCustomer from './addCustomer.vue'
-import axios from 'axios'
+import displaycustomers from './displaycustomers.vue'
   export default {
     name: "App",
-    components: {addCustomer},
-    data() {      
-            return {
-        fields: [
-          // A virtual column that doesn't exist in items
-          'index',
-          'name',
-          // A column that needs custom formatting
-         'email',
-          // A regular column
-          'mobilenumber'
-        ],
-        items: []
-      }
-    },
-    mounted () {
-    axios
-      .get('/api/getcustomers')
-      .then(response => (this.items = response.data, console.warn(response.data)))
-  }
+    components: {addCustomer, displaycustomers}
   
 }
 </script>
