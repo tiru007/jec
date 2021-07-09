@@ -1,17 +1,16 @@
 <template>
-    <div>
-    <b-table
-      :items="items"
-      :fields="fields"
-      :sort-by.sync="sortBy"
-      :sort-desc.sync="sortDesc"
-      responsive="sm"
-    ></b-table>
+   <div>
+    <b-table small :fields="fields" :items="items" responsive="sm">
+      <!-- A virtual column -->
+      <template #cell(index)="data">
+        {{ data.index + 1 }}
+      </template>
 
-    <div>
-      Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
-      <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b>
-    </div>
+      <!-- A custom formatted column -->
+      <template #cell(name)="data">
+        <b class="text-info">{{ data.item.value.firstName }}</b>, <b>{{ data.item.value.lastname }}</b>
+      </template>
+    </b-table>
   </div>
 </template>
 
@@ -21,21 +20,23 @@ import axios from 'axios'
     name: "App",
     data() {      
             return {
-        sortBy: 'id',
-        sortDesc: false,
         fields: [
-          { key: 'lastname', sortable: true },
-          { key: 'firstname', sortable: true },
-          { key: 'id', sortable: true },
-          { key: 'mobilenumber', sortable: false }
+          // A virtual column that doesn't exist in items
+          'index',
+          // A column that needs custom formatting
+         'firstName',
+         'lastName',
+          // A regular column
+          'mobilenumber'
         ],
-        items: [ ]
+        items: []
       }
     },
     mounted () {
     axios
-      .get('/api/getcustomers')
-      .then(response => (this.items = response))
+      .get('https://lively-wave-051b7f910.azurestaticapps.net/api/getcustomers')
+      .then(response => (this.items = response.data, console.warn(response.data)))
   }
-  }
+  
+}
 </script>
